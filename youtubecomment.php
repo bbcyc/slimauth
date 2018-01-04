@@ -1,4 +1,6 @@
-To the first group of routes, I add:
+<?php
+
+// To the first group of routes, I add:
 
  $this->get('/auth/activate', 'AuthController:getActivate')->setName('auth.activate');
 
@@ -8,7 +10,7 @@ To the first group of routes, I add:
  $this->get('/auth/password/reset', 'PasswordController:getResetPassword')->setName('auth.password.reset'); 
  $this->post('/auth/password/reset', 'PasswordController:postResetPassword');
 
-In AuthController.php:
+// In AuthController.php:
 
     public function getActivate($request, $response)
     {
@@ -34,7 +36,7 @@ In AuthController.php:
         }
     }
 
-    In User model I add the function ActivateAccount:
+  //  In User model I add the function ActivateAccount:
     public function activateAccount()
     {
         $this->update([
@@ -43,7 +45,7 @@ In AuthController.php:
         ]);
     }
 
-In PasswordController.php:
+// In PasswordController.php:
 
   public function getRecoverPassword($request, $response)
     {
